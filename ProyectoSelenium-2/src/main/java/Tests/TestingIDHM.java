@@ -57,7 +57,7 @@ public class TestingIDHM {
         // The "Subir Comprobantes" text is clicked.
         chromeDriver.findElement(By.xpath("//*[@id=\"abircomprobantenologueado\"]")).click();
 
-        // It is verified that "Upload Receipt window" is visible.
+        // It is verified that the "Upload Receipt window" is visible.
         WebElement uploadReceiptWindowCM = chromeDriver.findElement(By.xpath("//*[@id=\"appProfile\"]/div[3]"));
         if (uploadReceiptWindowCM.isDisplayed()) {
             System.out.println("The 'Upload Receipt Window' is visible in Chrome.");
@@ -70,7 +70,7 @@ public class TestingIDHM {
         // The "Subir Comprobantes" text is clicked.
         edDriver.findElement(By.xpath("//*[@id=\"abircomprobantenologueado\"]")).click();
 
-        // It is verified that "Upload Receipt window" is visible.
+        // It is verified that the "Upload Receipt window" is visible.
         WebElement uploadReceiptWindowME = edDriver.findElement(By.xpath("//*[@id=\"appProfile\"]/div[3]"));
         if (uploadReceiptWindowME.isDisplayed()) {
             System.out.println("The 'Upload Receipt Window' is visible in Microsoft Edge.");
@@ -88,11 +88,11 @@ public class TestingIDHM {
         // The "RMA - Garantia" text is clicked.
         chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[1]/a[5]/span")).click();
 
-        //
+        // Wait for "RMA - Garantia" window to load.
         By warrantyRMAWindowSelectorCM = By.xpath("//*[@id=\"modaldisclaimer\"]/div/div/div[1]");
         WebElement warrantyRMAWindowCM = chromeWait.until(ExpectedConditions.visibilityOfElementLocated(warrantyRMAWindowSelectorCM));
 
-        //
+        // It is verified that the "RMA - Garantia" window is visible.
         if (warrantyRMAWindowCM.isDisplayed()) {
             System.out.println("The 'RMA - Garantia window' is visible in Chrome.");
         } else {
@@ -104,11 +104,11 @@ public class TestingIDHM {
         // The "RMA - Garantia" text is clicked.
         edDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[1]/a[5]/span")).click();
 
-        //
+        // Wait for "RMA - Garantia" window to load.
         By warrantyRMAWindowSelectorME = By.xpath("//*[@id=\"modaldisclaimer\"]/div/div/div[1]");
         WebElement warrantyRMAWindowME = chromeWait.until(ExpectedConditions.visibilityOfElementLocated(warrantyRMAWindowSelectorME));
 
-        //
+        // It is verified that the "RMA - Garantia" window is visible.
         if (warrantyRMAWindowME.isDisplayed()) {
             System.out.println("The 'RMA - Garantia window' is visible in Microsoft Edge.");
         } else {
@@ -128,7 +128,7 @@ public class TestingIDHM {
         WebElement searcherCM = chromeDriver.findElement(By.id("buscadorDesktop"));
         searcherCM.sendKeys("motherboard");
 
-        // It is verified that field is complete.
+        // It is verified that the field is complete.
         String searcherCheckCM = searcherCM.getAttribute("value");
         if (!searcherCheckCM.isEmpty()) {
             System.out.println("The field is complete in Chrome.");
@@ -153,7 +153,7 @@ public class TestingIDHM {
         WebElement searcherME = edDriver.findElement(By.id("buscadorDesktop"));
         searcherME.sendKeys("motherboard");
 
-        // It is verified that field is complete.
+        // It is verified that the field is complete.
         String searcherCheckME = searcherME.getAttribute("value");
         if (!searcherCheckME.isEmpty()) {
             System.out.println("The field is complete in Microsoft Edge.");
@@ -182,7 +182,7 @@ public class TestingIDHM {
         WebElement searcherCM = chromeDriver.findElement(By.id("buscadorDesktop"));
         searcherCM.sendKeys("chocolate");
 
-        // It is verified that field is complete.
+        // It is verified that the field is complete.
         String searcherCheckCM = searcherCM.getAttribute("value");
         if (!searcherCheckCM.isEmpty()) {
             System.out.println("The field is complete in Chrome.");
@@ -193,7 +193,7 @@ public class TestingIDHM {
         // The "magnifying glass" icon is clicked.
         chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[2]/div[1]/button/img")).click();
 
-        // It is verified that alert "not result" is visible.
+        // It is verified that the alert "not result" is visible.
         WebElement alertResultCM = chromeDriver.findElement(By.id("contenedornoproducto"));
         if (alertResultCM.isDisplayed()) {
             System.out.println("The alert 'not result' is visible in Chrome.");
@@ -207,7 +207,7 @@ public class TestingIDHM {
         WebElement searcherME = edDriver.findElement(By.id("buscadorDesktop"));
         searcherME.sendKeys("chocolate");
 
-        // It is verified that field is complete.
+        // It is verified that the field is complete.
         String searcherCheckME = searcherME.getAttribute("value");
         if (!searcherCheckME.isEmpty()) {
             System.out.println("The field is complete in Microsoft Edge.");
@@ -218,7 +218,7 @@ public class TestingIDHM {
         // The "magnifying glass" icon is clicked.
         edDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[2]/div[1]/button/img")).click();
 
-        // It is verified that alert "not result" is visible.
+        // It is verified that the alert "not result" is visible.
         WebElement motherboardResultME = edDriver.findElement(By.id("contenedornoproducto"));
         if (motherboardResultME.isDisplayed()) {
             System.out.println("The alert 'not result' is visible in Microsoft Edge.");
@@ -236,7 +236,7 @@ public class TestingIDHM {
         WebElement searcherCM = chromeDriver.findElement(By.id("buscadorDesktop"));
         searcherCM.sendKeys("@#!#!@#!@#");
 
-        // It is verified that field isn't complete.
+        // It is verified that the field isn't complete.
         String searcherCheckCM = searcherCM.getAttribute("value");
         if (!searcherCheckCM.isEmpty()) {
             Assert.fail("The field is complete in Chrome.");
@@ -247,7 +247,7 @@ public class TestingIDHM {
         // The "magnifying glass" icon is clicked.
         chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[2]/div[1]/button/img")).click();
 
-        // It is verified that alert "not result" is visible.
+        // It is verified that the alert "not result" is visible.
         WebElement alertResultCM = chromeDriver.findElement(By.id("contenedornoproducto"));
         if (alertResultCM.isDisplayed()) {
             System.out.println("The alert 'not result' is visible in Chrome.");
@@ -261,7 +261,7 @@ public class TestingIDHM {
         WebElement searcherME = edDriver.findElement(By.id("buscadorDesktop"));
         searcherME.sendKeys("@#!#!@#!@#");
 
-        // It is verified that field is complete.
+        // It is verified that the field isn't complete.
         String searcherCheckME = searcherME.getAttribute("value");
         if (!searcherCheckME.isEmpty()) {
             Assert.fail("The field is complete in Microsoft Edge.");
@@ -272,7 +272,7 @@ public class TestingIDHM {
         // The "magnifying glass" icon is clicked.
         edDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[2]/div[1]/button/img")).click();
 
-        // It is verified that alert "not result" is visible.
+        // It is verified that the alert "not result" is visible.
         WebElement motherboardResultME = edDriver.findElement(By.id("contenedornoproducto"));
         if (motherboardResultME.isDisplayed()) {
             System.out.println("The alert 'not result' is visible in Microsoft Edge.");
@@ -289,7 +289,7 @@ public class TestingIDHM {
         // The "Ingresar" text is clicked.
         chromeDriver.findElement(By.xpath("//*[@id=\"cuentanologueada\"]/p")).click();
 
-        // It is verified that "Login window" is visible.
+        // It is verified that the "Login window" is visible.
         WebElement loginWindowCM = chromeDriver.findElement(By.id("loginBody"));
         if (loginWindowCM.isDisplayed()) {
             System.out.println("The 'login window' is visible in Chrome.");
@@ -302,7 +302,7 @@ public class TestingIDHM {
         // The "Ingresar" text is clicked.
         edDriver.findElement(By.xpath("//*[@id=\"cuentanologueada\"]/p")).click();
 
-        // It is verified that "Login window" is visible.
+        // It is verified that the "Login window" is visible.
         WebElement loginWindowME = edDriver.findElement(By.id("loginBody"));
         if (loginWindowME.isDisplayed()) {
             System.out.println("The 'login window' is visible in Microsoft Edge.");
@@ -323,7 +323,7 @@ public class TestingIDHM {
         By myCartAlertSelectorCM = By.xpath("//*[@id=\"busqueda\"]/div[3]/div");
         WebElement myCartAlertCM = chromeWait.until(ExpectedConditions.visibilityOfElementLocated(myCartAlertSelectorCM));
 
-        // It is verified "My cart alert" is visible.
+        // It is verified that the "My cart alert" is visible.
         if (myCartAlertCM.isDisplayed()) {
             System.out.println("The 'My cart alert' is visible in Chrome.");
         } else {
@@ -339,7 +339,7 @@ public class TestingIDHM {
         By myCartAlertSelectorME = By.xpath("//*[@id=\"busqueda\"]/div[3]/div");
         WebElement myCartAlertME = edWait.until(ExpectedConditions.visibilityOfElementLocated(myCartAlertSelectorME));
 
-        // It is verified "My cart alert" is visible.
+        // It is verified that the "My cart alert" is visible.
         if (myCartAlertME.isDisplayed()) {
             System.out.println("The 'My cart alert' is visible in Microsoft Edge.");
         } else {
@@ -349,6 +349,36 @@ public class TestingIDHM {
 
     @Test(priority = 11, enabled = false)
     public void SearchForCategoryHM011() throws InterruptedException {}
+
+    @Test(priority = 12, enabled = true)
+    public void createYourPcBtnHM012() throws InterruptedException {
+
+        // ----- Test for Chrome -----
+
+        // The "ARMA TU PC" button is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"armarpc\"]/a/span")).click();
+
+        // It is verified that the "ARMA TU PC" section is visible.
+        WebElement createYourPcSectionCM = chromeDriver.findElement(By.xpath("//*[@id=\"divBody\"]/div[8]/div/div/div[2]/div[1]/div/span/h1"));
+        if (createYourPcSectionCM.isDisplayed()) {
+            System.out.println("The 'ARMA TU PC' section is visible in Chrome.");
+        } else {
+            Assert.fail("The 'ARMA TU PC' section is not visible in Chrome.");
+        }
+
+        // ----- Test for Microsoft Edge -----
+
+        // The "ARMA TU PC" button is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"armarpc\"]/a/span")).click();
+
+        // It is verified that the "ARMA TU PC" section is visible.
+        WebElement createYourPcSectionME = edDriver.findElement(By.xpath("//*[@id=\"divBody\"]/div[8]/div/div/div[2]/div[1]/div/span/h1"));
+        if (createYourPcSectionME.isDisplayed()) {
+            System.out.println("The 'ARMA TU PC' section is visible in Microsoft Edge.");
+        } else {
+            Assert.fail("The 'ARMA TU PC' section is not visible in Microsoft Edge.");
+        }
+    }
 
     @AfterMethod
     public void CloseSession(){
