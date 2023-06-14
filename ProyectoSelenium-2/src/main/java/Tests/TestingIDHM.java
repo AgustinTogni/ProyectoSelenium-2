@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.testng.annotations.*;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.time.Duration;
 
@@ -380,7 +381,91 @@ public class TestingIDHM {
         }
     }
 
-    @AfterMethod
+    @Test(priority = 13, enabled = true)
+    public void toggleLightModeDarkModeHM013() throws InterruptedException {
+
+        // ----- Test for Chrome -----
+
+        // The "toggle" button is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/nav/div/div[3]/div/label/div")).click();
+
+        // It is verified that the light mode is visible.
+        WebElement darkModeCM = chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/nav/div/div[3]/div/p[1]"));
+        if (darkModeCM.isDisplayed()) {
+            System.out.println("The dark mode is visible in Chrome.");
+        } else {
+            Assert.fail("The dark mode is not visible in Chrome.");
+        }
+
+        // The "toggle" button is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/nav/div/div[3]/div/label/div")).click();
+
+        // It is verified that the dark mode is visible.
+        WebElement lightModeCM = chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/nav/div/div[3]/div/p[2]"));
+        if (lightModeCM.isDisplayed()) {
+            System.out.println("The light mode is visible in Chrome.");
+        } else {
+            Assert.fail("The light mode is not visible in Chrome.");
+        }
+
+        // ----- Test for Microsoft Edge -----
+
+        // The "toggle" button is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/nav/div/div[3]/div/label/div")).click();
+
+        // It is verified that the light mode is visible.
+        WebElement darkModeME = edDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/nav/div/div[3]/div/p[1]"));
+        if (darkModeME.isDisplayed()) {
+            System.out.println("The dark mode is visible in Microsoft Edge.");
+        } else {
+            Assert.fail("The dark mode is not visible in Microsoft Edge.");
+        }
+
+        // The "toggle" button is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/nav/div/div[3]/div/label/div")).click();
+
+        // It is verified that the dark mode is visible.
+        WebElement lightModeME = edDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/nav/div/div[3]/div/p[2]"));
+        if (lightModeME.isDisplayed()) {
+            System.out.println("The light mode is visible in Microsoft Edge.");
+        } else {
+            Assert.fail("The light mode is not visible in Microsoft Edge.");
+        }
+
+    }
+
+    @Test(priority = 14, enabled = true)
+    public void imageCarouselHM014() throws InterruptedException {
+
+        // ----- Test for Chrome -----
+
+        // js executor is set.
+        JavascriptExecutor jsExecutorCM = (JavascriptExecutor) chromeDriver;
+
+        // The "right arrow" is clicked.
+        WebElement rightArrowCM = chromeDriver.findElement(By.xpath("//*[@id='mainSlider']/div/ul/li[2]/a/img"));
+        jsExecutorCM.executeScript("arguments[0].click();", rightArrowCM);
+
+        // The "left arrow" is clicked.
+        WebElement leftArrowCM = chromeDriver.findElement(By.xpath("//*[@id=\"mainSlider\"]/div/ul/li[1]/a/img"));
+        jsExecutorCM.executeScript("arguments[0].click();", leftArrowCM);
+
+        // ----- Test for Microsoft Edge -----
+
+        // js executor is set.
+        JavascriptExecutor jsExecutorME = (JavascriptExecutor) edDriver;
+
+        // The "right arrow" is clicked.
+        WebElement rightArrowME = edDriver.findElement(By.xpath("//*[@id='mainSlider']/div/ul/li[2]/a/img"));
+        jsExecutorME.executeScript("arguments[0].click();", rightArrowME);
+
+        // The "left arrow" is clicked.
+        WebElement leftArrowME = edDriver.findElement(By.xpath("//*[@id=\"mainSlider\"]/div/ul/li[1]/a/img"));
+        jsExecutorME.executeScript("arguments[0].click();", leftArrowME);
+
+    }
+
+    //@AfterMethod
     public void CloseSession(){
         log.info("#######");
         log.info("[ Drivers Status ] clean and close controller instance");
