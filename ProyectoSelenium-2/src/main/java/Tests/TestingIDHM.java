@@ -465,7 +465,97 @@ public class TestingIDHM {
 
     }
 
-    //@AfterMethod
+   @Test(priority = 15, enabled = false)
+   public void imageWithTheBestPricesHM015() throws InterruptedException {}
+
+    @Test(priority = 16, enabled = true)
+    public void sectionComputersRecommendedsHM016() throws InterruptedException {
+
+        // ----- Test for Chrome -----
+
+        // The "PC BASIC" section is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"home\"]/section[2]/div[2]/div/div/div[1]/div/div/div/a/picture/img")).click();
+
+        // It is verified that the "PC BASIC" section is visible.
+        WebElement basicPcSectionCM = chromeDriver.findElement(By.xpath("//*[@id=\"catysub\"]/li/a/span"));
+        if (basicPcSectionCM.isDisplayed()) {
+            System.out.println("The 'PC BASIC' section is visible in Chrome.");
+        } else {
+            Assert.fail("The 'PC BASIC' section is not visible in Chrome.");
+        }
+
+        // The "home" logo is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
+
+        // The "PC MEDIA" section is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"home\"]/section[2]/div[2]/div/div/div[2]/div/div/div/a/picture/img")).click();
+
+        // It is verified that the "PC MEDIA" section is visible.
+        WebElement mediumPcSectionCM = chromeDriver.findElement(By.xpath("//*[@id=\"catysub\"]/li/a/span"));
+        if (mediumPcSectionCM.isDisplayed()) {
+            System.out.println("The 'PC MEDIA' section is visible in Chrome.");
+        } else {
+            Assert.fail("The 'PC MEDIA' section is not visible in Chrome.");
+        }
+
+        // The "home" logo is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
+
+        // The "PC ALTA" section is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"home\"]/section[2]/div[2]/div/div/div[3]/div/div/div/a/picture/img")).click();
+
+        // It is verified that the "PC ALTA" section is visible.
+        WebElement highPcSectionCM = chromeDriver.findElement(By.xpath("//*[@id=\"catysub\"]/li/a/span"));
+        if (highPcSectionCM.isDisplayed()) {
+            System.out.println("The 'PC ALTA' section is visible in Chrome.");
+        } else {
+            Assert.fail("The 'PC ALTA' section is not visible in Chrome.");
+        }
+
+        // ----- Test for Microsoft Edge -----
+
+        // The "PC BASIC" section is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"home\"]/section[2]/div[2]/div/div/div[1]/div/div/div/a/picture/img")).click();
+
+        // It is verified that the "PC BASIC" section is visible.
+        WebElement basicPcSectionME = edDriver.findElement(By.xpath("//*[@id=\"catysub\"]/li/a/span"));
+        if (basicPcSectionME.isDisplayed()) {
+            System.out.println("The 'PC BASIC' section is visible in Microsoft Edge.");
+        } else {
+            Assert.fail("The 'PC BASIC' section is not visible in Microsoft Edge.");
+        }
+
+        // The "home" logo is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
+
+        // The "PC MEDIA" section is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"home\"]/section[2]/div[2]/div/div/div[2]/div/div/div/a/picture/img")).click();
+
+        // It is verified that the "PC MEDIA" section is visible.
+        WebElement mediumPcSectionME = edDriver.findElement(By.xpath("//*[@id=\"catysub\"]/li/a/span"));
+        if (mediumPcSectionME.isDisplayed()) {
+            System.out.println("The 'PC MEDIA' section is visible in Microsoft Edge.");
+        } else {
+            Assert.fail("The 'PC MEDIA' section is not visible in Microsoft Edge.");
+        }
+
+        // The "home" logo is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
+
+        // The "PC ALTA" section is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"home\"]/section[2]/div[2]/div/div/div[3]/div/div/div/a/picture/img")).click();
+
+        // It is verified that the "PC ALTA" section is visible.
+        WebElement highPcSectionME = edDriver.findElement(By.xpath("//*[@id=\"catysub\"]/li/a/span"));
+        if (highPcSectionME.isDisplayed()) {
+            System.out.println("The 'PC ALTA' section is visible in Microsoft Edge.");
+        } else {
+            Assert.fail("The 'PC ALTA' section is not visible in Microsoft Edge.");
+        }
+
+    }
+
+    @AfterMethod
     public void CloseSession(){
         log.info("#######");
         log.info("[ Drivers Status ] clean and close controller instance");
