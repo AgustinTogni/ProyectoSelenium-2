@@ -562,7 +562,7 @@ public class TestingIDHM {
 
     }
 
-    @Test(priority = 18, enabled = false)
+    @Test(priority = 18, enabled = true)
     public void sectionBrandsHM018() throws InterruptedException {
 
         // ----- Test for Chrome -----
@@ -571,8 +571,8 @@ public class TestingIDHM {
         chromeDriver.findElement(By.xpath("//*[@id=\"content-desktop\"]/div/ul/li[1]/a")).click();
 
         // It is verified that Intel section is visible.
-        WebElement sectionIntel = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[4]/ul/li[1]/div"));
-        if (sectionIntel.isDisplayed()) {
+        WebElement sectionIntelCM = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[4]/ul/li[1]/div"));
+        if (sectionIntelCM.isDisplayed()) {
             System.out.println("The Intel Section is visible in Chrome.");
         } else {
             Assert.fail("The Intel Section is not visible in Chrome.");
@@ -581,12 +581,19 @@ public class TestingIDHM {
         // The "home" logo is clicked.
         chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
 
+        // Wait of 3 seconds.
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         // The Genesis brand icon is clicked.
-        chromeDriver.findElement(By.xpath("//*[@id=\"svghome\"]")).click();
+        chromeDriver.findElement(By.xpath("//*[@id=\"content-desktop\"]/div/ul/li[2]/a")).click();
 
         // It is verified that Genesis section is visible.
-        WebElement sectionGenesis = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[4]/ul/li[1]/div"));
-        if (sectionGenesis.isDisplayed()) {
+        WebElement sectionGenesisCM = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[4]/ul/li[1]/div"));
+        if (sectionGenesisCM.isDisplayed()) {
             System.out.println("The Genesis Section is visible in Chrome.");
         } else {
             Assert.fail("The Genesis Section is not visible in Chrome.");
@@ -595,17 +602,130 @@ public class TestingIDHM {
         // The "home" logo is clicked.
         chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
 
+        // Wait of 3 seconds.
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         // The AMD brand icon is clicked.
-        chromeDriver.findElement(By.xpath("//*[@id=\"svghome\"]/g/path")).click();
+        chromeDriver.findElement(By.xpath("//*[@id=\"content-desktop\"]/div/ul/li[3]/a")).click();
 
         // It is verified that AMD section is visible.
-        WebElement sectionAMD = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[4]/ul/li[1]/div"));
-        if (sectionAMD.isDisplayed()) {
+        WebElement sectionAMDCM = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[4]/ul/li[1]/div"));
+        if (sectionAMDCM.isDisplayed()) {
             System.out.println("The AMD Section is visible in Chrome.");
         } else {
             Assert.fail("The AMD Section is not visible in Chrome.");
         }
 
+        // The "home" logo is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
+
+        // Wait of 3 seconds.
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // The ASUS brand icon is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"content-desktop\"]/div/ul/li[4]/a")).click();
+
+        // It is verified that ASUS section is visible.
+        WebElement sectionASUSCM = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[4]/ul/li[1]/div"));
+        if (sectionASUSCM.isDisplayed()) {
+            System.out.println("The ASUS Section is visible in Chrome.");
+        } else {
+            Assert.fail("The ASUS Section is not visible in Chrome.");
+        }
+
+        // The "home" logo is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
+
+        // Wait of 3 seconds.
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // The NVIDIA brand icon is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"content-desktop\"]/div/ul/li[5]/a")).click();
+
+        // It is verified that NVIDIA section is visible.
+        WebElement sectionNVIDIACM = chromeDriver.findElement(By.xpath("//*[@id=\"resbusqueda\"]/strong"));
+        if (sectionNVIDIACM.isDisplayed()) {
+            System.out.println("The NVIDIA Section is visible in Chrome.");
+        } else {
+            Assert.fail("The NVIDIA Section is not visible in Chrome.");
+        }
+
+        // The "home" logo is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
+
+        // Wait of 3 seconds.
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // The Logitech brand icon is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"logitech-logo-1\"]")).click();
+
+        // It is verified that Logitech section is visible.
+        WebElement sectionLogitechCM = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[3]/ul/li[1]/div"));
+        if (sectionLogitechCM.isDisplayed()) {
+            System.out.println("The Logitech Section is visible in Chrome.");
+        } else {
+            Assert.fail("The Logitech Section is not visible in Chrome.");
+        }
+
+        // The "home" logo is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
+
+        // Wait of 3 seconds.
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // The Gygabyte brand icon is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"Gigabyte_Technology-Logo.wine\"]")).click();
+
+        // It is verified that Gygabyte section is visible.
+        WebElement sectionGygabyteCM = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[4]/ul/li[1]/div"));
+        if (sectionGygabyteCM.isDisplayed()) {
+            System.out.println("The Gygabyte Section is visible in Chrome.");
+        } else {
+            Assert.fail("The Gygabyte Section is not visible in Chrome.");
+        }
+
+        // The "home" logo is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"busqueda\"]/div[6]/div[1]/div[1]/a/img")).click();
+
+        // Wait of 3 seconds.
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // The Redragon brand icon is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"redragon\"]")).click();
+
+        // It is verified that Redragon section is visible.
+        WebElement sectionRedragonCM = chromeDriver.findElement(By.xpath("//*[@id=\"filtros_left\"]/div[4]/ul/li[1]/div"));
+        if (sectionRedragonCM.isDisplayed()) {
+            System.out.println("The Redragon Section is visible in Chrome.");
+        } else {
+            Assert.fail("The Redragon Section is not visible in Chrome.");
+        }
+
+        // ----- Test for Microsoft Edge
     }
 
     @AfterMethod
