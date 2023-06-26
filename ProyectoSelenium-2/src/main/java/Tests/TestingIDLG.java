@@ -70,6 +70,8 @@ public class TestingIDLG {
         // It is verified that the login is successful.
         if (homeCM.isDisplayed()) {
             System.out.println("The login was successful in Chrome.");
+        } else {
+            Assert.fail("The login was not successful in Chrome.");
         }
 
         // ----- Test for Microsoft Edge -----
@@ -90,6 +92,8 @@ public class TestingIDLG {
         // It is verified that the login is successful.
         if (homeME.isDisplayed()) {
             System.out.println("The login was successful in Microsoft Edge.");
+        } else {
+            Assert.fail("The login was not successful in Microsoft Edge.");
         }
     }
 
@@ -140,6 +144,36 @@ public class TestingIDLG {
         // It is verified that the login is successful.
         if (alertInvalidDataME.isDisplayed()) {
             System.out.println("The login was not successful in Microsoft Edge.");
+        }
+    }
+
+    @Test (priority = 3, enabled = true)
+    public void RegistrationTextLinkLG003() throws InterruptedException {
+
+        // ----- Test for Chrome -----
+
+        // The text "Registrarse" is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"cajaRegistro\"]/a")).click();
+
+        // It is verified that the registration text link works.
+        WebElement formRegisterCM = chromeDriver.findElement(By.xpath("//*[@id=\"form-registro\"]/div/div"));
+        if (formRegisterCM.isDisplayed()) {
+            System.out.println("The registration text link works in Chrome");
+        } else {
+            Assert.fail("The registration text link not work in Chrome");
+        }
+
+        // ----- Test for Microsoft Edge -----
+
+        // The text "Registrarse" is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"cajaRegistro\"]/a")).click();
+
+        // It is verified that the registration text link works.
+        WebElement formRegisterME = edDriver.findElement(By.xpath("//*[@id=\"form-registro\"]/div/div"));
+        if (formRegisterME.isDisplayed()) {
+            System.out.println("The registration text link works in Microsoft Edge.");
+        } else {
+            Assert.fail("The registration text link not work in Microsoft Edge.");
         }
     }
 
