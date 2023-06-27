@@ -177,6 +177,50 @@ public class TestingIDLG {
         }
     }
 
+    @Test (priority = 4, enabled = true)
+    public void ForgotMyPasswordTextLinkLG004() throws InterruptedException {
+
+        // ----- Test for Chrome -----
+
+        // The text "Olvide mi clave" is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"#abrirrecuperocontra\"]")).click();
+
+        // Wait of 3 seconds.
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // It is verified that the alert recovery is visible.
+        WebElement alertRecoveryCM = chromeDriver.findElement(By.xpath("//*[@id=\"modalrecuperocontra\"]/div/div/div[1]/h5"));
+        if (alertRecoveryCM.isDisplayed()) {
+            System.out.println("The alert recovery is visible in Chrome.");
+        } else {
+            Assert.fail("The alert recovery is not visible in Chrome.");
+        }
+
+        // ----- Test for Microsoft Edge -----
+
+        // The text "Olvide mi clave" is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"#abrirrecuperocontra\"]")).click();
+
+        // Wait of 3 seconds.
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // It is verified that the alert recovery is visible.
+        WebElement alertRecoveryME = edDriver.findElement(By.xpath("//*[@id=\"modalrecuperocontra\"]/div/div/div[1]/h5"));
+        if (alertRecoveryME.isDisplayed()) {
+            System.out.println("The alert recovery is visible in Microsoft Edge.");
+        } else {
+            Assert.fail("The alert recovery is not visible in Microsoft Edge.");
+        }
+    }
+
     @AfterMethod
     public void CloseSession(){
         log.info("#######");
