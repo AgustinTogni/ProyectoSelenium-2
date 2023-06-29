@@ -221,6 +221,48 @@ public class TestingIDLG {
         }
     }
 
+    @Test (priority = 5, enabled = true)
+    public void RecoveryPasswordFunctionLG005() throws InterruptedException {
+
+        // ----- Test for Chrome -----
+
+        // The text "Olvide mi clave" is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"#abrirrecuperocontra\"]")).click();
+
+        // Wait for email field to appear.
+        By emailFieldSelectorCM = By.xpath("//*[@id=\"usuariorecupero\"]");
+        WebElement emailFieldCM = chromeWait.until(ExpectedConditions.visibilityOfElementLocated(emailFieldSelectorCM));
+
+        // The field "Ingresar correo" is completed.
+        emailFieldCM.sendKeys("Admin123@gmail.com");
+
+        // The "Recuperar Clave" button is clicked.
+        chromeDriver.findElement(By.xpath("//*[@id=\"modalrecuperocontra\"]/div/div/div[2]/div/div[2]/button")).click();
+
+        // It is verified that the recovery password function is works.
+
+            // This step is not possibility because the mail is not real.
+
+        // ----- Test for Microsoft Edge -----
+
+        // The text "Olvide mi clave" is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"#abrirrecuperocontra\"]")).click();
+
+        // Wait for email field to appear.
+        By emailFieldSelectorME = By.xpath("//*[@id=\"usuariorecupero\"]");
+        WebElement emailFieldME = edWait.until(ExpectedConditions.visibilityOfElementLocated(emailFieldSelectorME));
+
+        // The field "Ingresar correo" is completed.
+        emailFieldME.sendKeys("Admin123@gmail.com");
+
+        // The "Recuperar Clave" button is clicked.
+        edDriver.findElement(By.xpath("//*[@id=\"modalrecuperocontra\"]/div/div/div[2]/div/div[2]/button")).click();
+
+        // It is verified that the recovery password function is works.
+
+            // This step is not possibility because the mail is not real.
+    }
+
     @AfterMethod
     public void CloseSession(){
         log.info("#######");
