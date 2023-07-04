@@ -12,6 +12,7 @@ import org.testng.annotations.*;
 import org.openqa.selenium.JavascriptExecutor;
 
 import java.time.Duration;
+
 public class TestingIDLG {
 
     private String url = "https://www.maximus.com.ar/LOGIN/login/maximus.aspx";
